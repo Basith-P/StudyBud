@@ -196,3 +196,8 @@ def updateUser(request):
             return redirect('profile', pk=user.id)
 
     return render(request, 'base/update_user.html', {'form': form})
+
+
+def topicsView(request):
+    topics = Topic.objects.all()
+    return render(request, 'base/topics.html', {'topics': topics})
